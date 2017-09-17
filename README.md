@@ -157,11 +157,30 @@ config object:
   "electronPackagerConfig": {},
   "electronWinstallerConfig": {},
   "electronInstallerDMG": {},
+  "desktopLinuxConfig": {},
   "electronInstallerFlatpak": {},
   "electronInstallerDebian": {},
   "electronInstallerRedhat": {}
 }
 ```
+
+`desktopLinuxConfig` is for common configuration shared by all of the Linux make targets,
+for example:
+
+```javascript
+{
+  "desktopLinuxConfig": {
+    "options": {
+      "categories": ["Game", "Network"],
+      "mimeType": "application/x-my-game"
+    }
+  }
+}
+```
+
+This would set the `Categories` and `MimeType` fields in the generated `.desktop` file for every
+enabled `linux` make target. There are several other common options; compare the individual make
+target options (links below) for details.
 
 ## Possible `make` targets
 
